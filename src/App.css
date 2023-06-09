@@ -2,6 +2,10 @@
   text-align: center;
 }
 
+body{
+  background-color: gray;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -35,4 +39,77 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+.login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  align-items: center;
+  font-family: "Inter";
+}
+.login__form {
+  display: flex;
+  flex-direction: column;
+  border: 5px solid black;
+  padding: 40px 40px;
+  box-shadow: 1px 6px 44px 1px rgba(0,0,0,0.61) inset;
+}
+.login__form> h1 {
+  font-style: 35px;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  letter-spacing: -1px;
+}
+.login__form >input {
+  min-width: 380px;
+  padding: 22px 0px;
+  padding-left: 15px;
+  margin-bottom: 10px;
+  outline: none;
+  border: 1px solid rgba (0,0,0,0.24);
+  font-family: "Inter";
+  border-radius: 2px;
+  font-size: 15px;
+}
+
+.logout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-family: "Inter";
+}
+
+.logout__button{
+  min-width: 200px;
+  padding: 17px 30px;
+  margin-top: 20px;
+  background: black;
+  border: none;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+
+.user__name{
+  color: #8d0ada;
+}
+
+
+.submit__btn{
+  padding: 17px 30px;
+  margin-top: 10px;
+  background-color: black;
+  border: none;
+  color: white;
+  font-size: 14px;
+  font-family: "Inter";
+  border-radius: 3px;
 }
