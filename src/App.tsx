@@ -16,6 +16,7 @@ import {   useSelector } from "react-redux";
 import Api from "./components/Api";
 import ErrorBoundary from "./components/Err";
 import Shop from "./components/Shop";
+import Singleproduct from "./components/Singleproduct";
 
 function App() {
   const user: any = useSelector((state: any) => state.user);
@@ -64,6 +65,7 @@ function App() {
               <Route path="earning" element={<Earning/>} />
               <Route path="api" element={<Api/>} />
               <Route path="shop" element={<Shop/>} />
+              <Route path="api/singleproduct/:id" element={<ErrorBoundary><Singleproduct/></ErrorBoundary>} />
               </Route>
           </>
         )}

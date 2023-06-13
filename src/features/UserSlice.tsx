@@ -23,6 +23,9 @@ export const userSlice = createSlice({
     logout: (state) => {
       state.user = null;
     },
+    Token:(state) =>{
+      state.token = null;
+    }
     // auto:(state,action) =>{
     //   if(state.token)
     //   {
@@ -37,11 +40,10 @@ export const userSlice = createSlice({
   
 });
 
-export const { login, logout } = userSlice.actions;
+export const { login, logout, Token } = userSlice.actions;
 
 export const selectUser = (state:any) => state.user.user;
 
-export const selectToken = (state:any) => state.token;
-
+// export const selectToken = (state:any) => state.token;
 
 export default userSlice.reducer;

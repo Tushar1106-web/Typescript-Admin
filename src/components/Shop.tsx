@@ -3,19 +3,23 @@ import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchcat } from "../features/apiSlice";
 import { Link } from "react-router-dom";
+import { logout } from "../features/UserSlice";
 
 const Shop = () => {
   const cartp:any = useSelector((state:any) => state.api);
   const dispatch = useDispatch();
+  const token = useSelector((state: any) => state.user.token);
 
   const [first, setfirst] = useState(false);
 
   useEffect(() => {
-    dispatch(fetchcat());
+    // token?
+     dispatch(fetchcat())
+    //  :dispatch(logout());
     setfirst(true);
   }, [dispatch]);
 
-  console.log(cartp);
+  // console.log(cartp);
 
 if(first)
 {

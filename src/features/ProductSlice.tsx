@@ -1,20 +1,23 @@
 import {
+  AnyAction,
+  Dispatch,
   createAsyncThunk,
   createSlice,
-  AsyncThunkOptions,
 } from "@reduxjs/toolkit";
 import product from "../json/product.json";
 import axios from "axios";
-
-
-export const fetchProducts = createAsyncThunk<any, any, any>(
-  "products/getProducts",
-  async (userId, thunkAPI) => {
-    const response = await axios.get("https://dummyjson.com/products");
-    return response?.data;
-  }
-);
-
+import { RootState } from "../app/Store";
+interface IParams {
+  name: string;
+}
+export const fetchProducts = createAsyncThunk<
+  any,
+  IParams,
+  { state: RootState; dispatch: Dispatch<AnyAction> }
+>("products/getProducts", async ({ name }, thunkAPI) => {
+  const response = await axios.get("https://dummyjson.com/products");
+  return response?.data;
+});
 
 export const productSlice = createSlice({
   name: "kanban",
